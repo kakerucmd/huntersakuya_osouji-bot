@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お掃除上方修正しろbot Project - FAQ</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="お掃除上方修正しろbot Project" />
+    <meta property="og:description" content="お掃除上方修正しろbot Project - FAQ" />
+    <meta property="og:image" content="https://kakerucmd.github.io/huntersakuya_osouji-bot/images/Osouji.png" />
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="document.html">ドキュメント</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="https://discord.gg/dE3JpBXjnx">サポートサーバー</a></li>
+                <li><a href="invite.html">招待</a></li>
+                <li><a href="TermOfUse.html">利用規約</a></li>
+                <li><a href="policy.html">プライバシーポリシー</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="discord-container">
+        <div class="discord-message">
+            <img class="discord-avatar" src="images/avatar.png" alt="Avatar">
+            <div class="discord-content">
+                <div class="discord-username">kakerucmd <span class="timestamp">— 2024/05/25 04:43 (last updated)</span></div>
+                <h2 class="discord-text">FAQ</h2>
+            </div>
+        </div>
+        <div class="discord-message no-avatar">
+            <div class="discord-content">
+                <h3>Q. botをサーバーに追加するにはどうすればいいですか？</h3>
+                <p>A. <a href="invite.html">招待ページ</a>にアクセスして、botを追加したいサーバーを選択してください。</p>
+                <p>権限を確認し、承認を行うことでbotが追加されます。</p>
+            </div>
+        </div>
+        <div class="discord-message no-avatar">
+            <div class="discord-content">
+                <h3>Q. botの設定を変更するにはどうすればいいですか？</h3>
+                <p>A. 管理者権限を持つユーザーのみが、コマンドを使用して変更可能です。具体的なコマンドについては、</p>
+                <p><a href="document.html">ドキュメント</a>をご覧ください。</p>
+            </div>
+        </div>
+        <div class="discord-message no-avatar">
+            <div class="discord-content">
+                <h3>Q. botの機能が正しく動作しません。どうすればいいですか？</h3>
+                <p>A. まずは、botがその機能を使用するために必要な権限を持っているか確認してください。</p>
+                <p>それでも解決しない場合は、<a href="https://discord.gg/dE3JpBXjnx">サポートサーバー</a>に参加して、詳細を報告してください。</p>
+            </div>
+        </div>
+        <div class="discord-message no-avatar">
+            <div class="discord-content">
+                <h3>Q. このbotのすべての機能を正常に動かすために最低限必要な権限を教えてください。</h3>
+                <p>A. メッセージ送信系権限、メッセージ管理系権限、メンバー管理系権限(ユーザーのBAN等も含む)、</p>
+                <p>サーバー管理系権限、チャンネル管理系権限、Webhook管理系権限</p>
+            </div>
+        </div>
+        <div class="discord-message no-avatar">
+            <div class="discord-content">
+                <h3>Q. botがオフラインになっていて、コマンドなどが応答しません。</h3>
+                <p>A. 多くの場合、エラーが発生していてbotが落ちてしまっているのが原因です。</p>
+                <p><a href="https://discord.gg/dE3JpBXjnx">サポートサーバー</a>に参加して、botがオフラインになっていることを伝えていただけると助かります。</p>
+            </div>
+        </div>
+        <div class="discord-message no-avatar">
+            <div class="discord-content">
+                <h3>Q. botに新しい機能をリクエストすることはできますか？</h3>
+                <p>A. はい、できます。新機能のリクエストは、<a href="https://discord.gg/dE3JpBXjnx">サポートサーバー</a>の「質問、要望」フォーラムで受け付けています。</p>
+            </div>
+        </div>
+        <div class="discord-message no-avatar">
+            <div class="discord-content">
+                <h3>Q. botの更新情報を知りたいです。</h3>
+                <p><a href="https://discord.gg/dE3JpBXjnx">サポートサーバー</a>でお知らせしています。是非ご参加ください。</p>
+            </div>
+        </div>
+        <div class="discord-message no-avatar">
+            <div class="discord-content" id="level-setup">
+                <h3>Q. レベル機能の設定方法について詳しく教えてください。</h3>
+                <p>A. 「/level setup」コマンドで機能をセットアップすることができます。</p>
+                <h4>【コマンドオプション】</h4>
+                <p>channel:レベルアップ時に通知するチャンネルを指定します。</p>
+                <p>message:レベルアップ時に通知するメッセージを設定します。</p>
+                <p>通知するメッセージ内では、{user.name}はユーザー名に、</p>
+                <p>{user}はユーザーメンション、{level}は現在のレベルになります。</p>
+                <p>※{}は外さないでください。</p>
+                <p>「/level disable」で設定を削除し、無効にすることができます。</p>
+                <p>再度有効化する場合は、同じように「/level setup」を使用して、セットアップしてください。</p>
+                <p>※レベルは削除されません。</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
