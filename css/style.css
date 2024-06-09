@@ -107,19 +107,76 @@ nav ul li a:active {
     font-weight: bold;
 }
 
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px;
+}
+
+.menu-icon span,
+.menu-icon span::before,
+.menu-icon span::after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    background-color: #5865F2;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+.menu-icon span::before {
+    transform: translateY(-8px);
+}
+
+.menu-icon span::after {
+    transform: translateY(5px);
+}
+
+#menu-toggle {
+    display: none;
+}
+
+#menu-toggle:checked + .menu-icon span {
+    background-color: transparent;
+}
+
+#menu-toggle:checked + .menu-icon span::before {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+#menu-toggle:checked + .menu-icon span::after {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
 @media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    #menu-toggle:checked + .menu-icon + .menu {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
     nav ul {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
+        flex-direction: column;
     }
 
     nav ul li {
-        flex: 0 0 auto;
+        margin: 5px 0;
     }
 
     nav ul li a {
         padding: 10px;
         display: block;
+        width: 100%;
     }
 }
