@@ -138,15 +138,15 @@ nav ul li a:active {
     display: none;
 }
 
-#menu-toggle:checked + .menu-icon span {
+#menu-toggle:checked + .menu-icon-label span {
     background-color: transparent;
 }
 
-#menu-toggle:checked + .menu-icon span::before {
+#menu-toggle:checked + .menu-icon-label span::before {
     transform: rotate(45deg) translate(5px, 5px);
 }
 
-#menu-toggle:checked + .menu-icon span::after {
+#menu-toggle:checked + .menu-icon-label span::after {
     transform: rotate(-45deg) translate(6px, -6px);
 }
 
@@ -201,7 +201,11 @@ nav ul li a:hover {
     }
 
     .discord-container {
-        margin-left: 200px;
+        margin-left: 0;
         transition: margin-left 0.3s ease;
     }
+}
+
+#menu-toggle:checked ~ .discord-container {
+    margin-left: 200px;
 }
