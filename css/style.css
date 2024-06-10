@@ -180,3 +180,12 @@ nav ul li a:active {
         width: 100%;
     }
 }
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #4f545c;
+    color: #72767d;
+    font-size: 0.9em;
+}
