@@ -5,8 +5,8 @@
   "bot_name": "お掃除上方修正しろbot",
   "site_name": "お掃除上方修正しろbot Project",
   "author": "kakerucmd",
-  "bot_version": "4.0.1",
-  "last_updated": "2024/06/28 18:18",
+  "bot_version": "4.1",
+  "last_updated": "2024/07/15 12:46",
   "url": "https://kakerucmd.github.io/huntersakuya_osouji-bot/",
   "language": "html,css,javascript",
 }
