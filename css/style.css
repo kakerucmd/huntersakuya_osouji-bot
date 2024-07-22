@@ -10,8 +10,13 @@ header {
 }
 
 a {
-    color: #4a90e2;
+    color: #03a9f4;
     text-decoration: none;
+}
+
+a:hover {
+    color: #40c4ff;
+    text-decoration: underline;
 }
 
 nav ul {
