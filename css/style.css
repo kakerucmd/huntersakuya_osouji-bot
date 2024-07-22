@@ -10,7 +10,7 @@ header {
 }
 
 a {
-    color: 	#356fc6;
+    color: #356fc6;
     text-decoration: none;
 }
 
@@ -45,7 +45,8 @@ nav ul li a:active {
 }
 
 .discord-container {
-    width: 1000px;
+    width: 100%;
+    max-width: 1000px;
     margin: 0 auto;
     background-color: #2f3136;
     border-radius: 5px;
@@ -55,11 +56,14 @@ nav ul li a:active {
 
 .discord-message {
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     margin-bottom: 10px;
 }
 
 .discord-message.no-avatar {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
     padding-left: 60px;
 }
 
@@ -179,6 +183,18 @@ nav ul li a:active {
         display: block;
         width: 100%;
     }
+}
+
+.responsive-img-large {
+    width: 100%;
+    max-width: 750px;
+    height: auto;
+}
+
+.responsive-img-small {
+    width: 100%;
+    max-width: 275px;
+    height: auto;
 }
 
 footer {
