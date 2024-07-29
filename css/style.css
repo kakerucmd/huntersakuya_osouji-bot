@@ -159,7 +159,7 @@ nav ul li a:active {
     transform: rotate(-45deg) translate(6px, -6px);
 }
 
-@media (max-width: 1002px) {
+@media (max-width: 1016px) {
     .menu {
         display: none;
         flex-direction: column;
