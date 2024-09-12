@@ -95,7 +95,7 @@ nav ul li a:active {
     transform: translateY(-8px);
 }
 
-.menu-icon span::after {
+menu-icon span::after {
     transform: translateY(5px);
 }
 
@@ -207,6 +207,12 @@ body.light-theme .discord-container {
     margin-bottom: 10px;
 }
 
+.discord-message img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 .discord-message.no-avatar {
     display: flex;
     align-items: flex-start;
@@ -263,6 +269,19 @@ body.light-theme .discord-message:hover .discord-content {
     margin: 0;
 }
 
+@media (max-width: 768px) {
+    .discord-container {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .discord-container {
+        width: 90%;
+        padding: 5px;
+    }
+}
+
 .applicationcommands {
     font-weight: bold;
 }
@@ -294,14 +313,6 @@ nav .toggle {
 
 #menu-toggle:checked ~ .menu {
     display: flex;
-}
-
-#darkmode-toggle {
-    display: none;
-}
-
-#darkmode-toggle:checked + .toggle span {
-    left: 2em;
 }
 
 @media (max-width: 1220px) {
