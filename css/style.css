@@ -5,6 +5,16 @@ body {
     padding: 20px;
 }
 
+body.dark-theme {
+    background-color: #36393f;
+    color: #dcddde;
+}
+
+body.light-theme {
+    background-color: #ffffff;
+    color: #000000;
+}
+
 header {
     padding: 10px 0;
 }
@@ -19,8 +29,19 @@ a:hover {
     text-decoration: underline;
 }
 
+p {
+    font-size: 17px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
 nav ul {
-    list-style: none; 
+    list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
@@ -34,92 +55,21 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #5865F2; 
-    padding: 10px;
+    color: #5865F2;
+    padding: 10px 15px;
+    border: 2px solid #5865F2;
+    border-radius: 5px;
 }
 
 nav ul li a:hover {
-    text-decoration: none;
     color: #b9bbbe;
-    border-bottom: 2px solid #5865F2;
-    transition: color 0.3s, border-bottom 0.3s;
+    background-color: #5865F2;
+    border-color: #b9bbbe;
 }
 
 nav ul li a:active {
     color: #99aab5;
-}
-
-.discord-container {
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    background-color: #2f3136;
-    border-radius: 5px;
-    padding: 20px;
-    box-sizing: border-box;
-    background: rgba(0, 0, 0, 0.05);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(4.5px);
-    -webkit-backdrop-filter: blur(4.5px);
-    border: 1px solid rgba(0, 0, 0, 0.24);
-}
-
-.discord-message {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 10px;
-}
-
-.discord-message.no-avatar {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 10px;
-    padding-left: 60px;
-}
-
-.discord-avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.discord-content {
-    border-radius: 10px;
-    border: 1px solid #4f545c;
-    background-color: #36393f;
-    padding: 10px;
-    color: #dcddde;
-    flex-grow: 1;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.discord-username {
-    color: #5865F2;
-    margin: 0;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-}
-
-.discord-message:hover .discord-content {
-    background-color: #2e3035;
-}
-
-.timestamp {
-    color: #72767d;
-    margin-left: 5px;
-    font-size: 0.8em;
-}
-
-.discord-text {
-    line-height: 1.5;
-    margin: 0;
-}
-
-.applicationcommands {
-    font-weight: bold;
+    border-color: #99aab5;
 }
 
 .menu-icon {
@@ -165,7 +115,196 @@ nav ul li a:active {
     transform: rotate(-45deg) translate(6px, -6px);
 }
 
-@media (max-width: 768px) {
+#menu-toggle:checked ~ .menu {
+    display: flex;
+}
+
+#darkmode-toggle {
+    display: none;
+}
+
+#darkmode-toggle:checked + .toggle span {
+    left: 2em;
+}
+
+.toggle {
+    font-size: 10px;
+    border: .125em solid currentColor;
+    border-radius: 2em;
+    cursor: pointer;
+    display: block;
+    height: 2em;
+    position: relative;
+    width: 3.75em;
+}
+
+.toggle span {
+    background-color: currentColor;
+    border-radius: 2em;
+    display: block;
+    height: 1.5em;
+    left: .25em;
+    overflow: hidden;
+    position: absolute;
+    top: .25em;
+    text-indent: -9999px;
+    transition: left .25s;
+    width: 1.5em;
+    z-index: 2;
+}
+
+.toggle::before,
+.toggle::after {
+    content: '';
+    display: block;
+    border-radius: 1em;
+    position: absolute;
+    z-index: 1;
+}
+
+.toggle::after {
+    box-shadow: .25em .25em #f7d769;
+    height: 1.125em;
+    right: .9em;
+    top: .125em;
+    width: 1.125em;
+}
+
+.toggle::before {
+    background-color: #ffc409;
+    height: .625em;
+    outline: .25em dotted #ffc409;
+    outline-offset: .125em;
+    left: .7em;
+    top: .7em;
+    width: .625em;
+}
+
+.discord-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #2f3136;
+    border-radius: 5px;
+    padding: 20px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.5px);
+    -webkit-backdrop-filter: blur(4.5px);
+    border: 1px solid rgba(0, 0, 0, 0.24);
+}
+
+body.light-theme .discord-container {
+    background-color: #f1f1f1;
+    color: #000000;
+}
+
+.discord-message {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.discord-message.no-avatar {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    padding-left: 60px;
+}
+
+.discord-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.discord-content {
+    border-radius: 10px;
+    border: 1px solid #4f545c;
+    background-color: #36393f;
+    padding: 10px;
+    color: #dcddde;
+    flex-grow: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+body.light-theme .discord-content {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.light-theme .discord-message:hover .discord-content {
+    background-color: #e0e0e0;
+}
+
+.discord-username {
+    color: #5865F2;
+    margin: 0;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.discord-message:hover .discord-content {
+    background-color: #2e3035;
+}
+
+.timestamp {
+    color: #72767d;
+    margin-left: 5px;
+    font-size: 0.8em;
+}
+
+.discord-text {
+    line-height: 1.5;
+    margin: 0;
+}
+
+.applicationcommands {
+    font-weight: bold;
+}
+
+nav {
+    justify-content: center;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-grow: 1;
+}
+
+nav .toggle {
+    position: absolute;
+    right: 20px;
+    z-index: 10;
+}
+
+.menu-icon {
+    display: none;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+#menu-toggle:checked ~ .menu {
+    display: flex;
+}
+
+#darkmode-toggle {
+    display: none;
+}
+
+#darkmode-toggle:checked + .toggle span {
+    left: 2em;
+}
+
+@media (max-width: 1220px) {
     .menu {
         display: none;
         flex-direction: column;
@@ -173,7 +312,7 @@ nav ul li a:active {
         text-align: center;
     }
 
-    #menu-toggle:checked + .menu-icon + .menu {
+    #menu-toggle:checked ~ .menu {
         display: flex;
     }
 
@@ -194,18 +333,11 @@ nav ul li a:active {
         display: block;
         width: 100%;
     }
-}
 
-.responsive-img-large {
-    width: 100%;
-    max-width: 750px;
-    height: auto;
-}
-
-.responsive-img-small {
-    width: 100%;
-    max-width: 275px;
-    height: auto;
+    .toggle {
+        position: static;
+        margin: 10px 0;
+    }
 }
 
 footer {
@@ -213,6 +345,5 @@ footer {
     margin-top: 20px;
     padding-top: 20px;
     border-top: 1px solid #4f545c;
-    color: #dcddde;
     font-size: 0.9em;
 }
