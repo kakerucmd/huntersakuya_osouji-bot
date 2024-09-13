@@ -95,7 +95,7 @@ nav ul li a:active {
     transform: translateY(-8px);
 }
 
-menu-icon span::after {
+.menu-icon span::after {
     transform: translateY(5px);
 }
 
@@ -115,8 +115,39 @@ menu-icon span::after {
     transform: rotate(-45deg) translate(6px, -6px);
 }
 
-#menu-toggle:checked ~ .menu {
+.menu-icon {
+    display: none;
+}
+
+nav ul {
     display: flex;
+}
+
+@media (max-width: 1220px) {
+    .menu-icon {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    #menu-toggle:checked ~ .menu {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    nav ul li a {
+        padding: 10px;
+        display: block;
+        width: 100%;
+    }
 }
 
 #darkmode-toggle {
@@ -181,8 +212,7 @@ menu-icon span::after {
 }
 
 .discord-container {
-    width: 100%;
-    max-width: 1000px;
+    width: min(1000px, 90%);
     margin: 0 auto;
     background-color: #2f3136;
     border-radius: 5px;
@@ -277,77 +307,8 @@ body.light-theme .discord-message:hover .discord-content {
 
 @media (max-width: 480px) {
     .discord-container {
-        width: 90%;
+        width: min(1000px, 90%);
         padding: 5px;
-    }
-}
-
-.applicationcommands {
-    font-weight: bold;
-}
-
-nav {
-    justify-content: center;
-}
-
-nav ul {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-grow: 1;
-}
-
-nav .toggle {
-    position: absolute;
-    right: 20px;
-    z-index: 10;
-}
-
-.menu-icon {
-    display: none;
-}
-
-#menu-toggle {
-    display: none;
-}
-
-#menu-toggle:checked ~ .menu {
-    display: flex;
-}
-
-@media (max-width: 1220px) {
-    .menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-    }
-
-    #menu-toggle:checked ~ .menu {
-        display: flex;
-    }
-
-    .menu-icon {
-        display: block;
-    }
-
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav ul li {
-        margin: 5px 0;
-    }
-
-    nav ul li a {
-        padding: 10px;
-        display: block;
-        width: 100%;
-    }
-
-    .toggle {
-        position: static;
-        margin: 10px 0;
     }
 }
 
@@ -357,4 +318,8 @@ footer {
     padding-top: 20px;
     border-top: 1px solid #4f545c;
     font-size: 0.9em;
+}
+
+.applicationcommands {
+    font-weight: bold;
 }
