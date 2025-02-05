@@ -5,11 +5,6 @@ body {
     padding: 20px;
 }
 
-body.dark-theme {
-    background-color: #36393f;
-    color: #dcddde;
-}
-
 body.light-theme {
     background-color: #ffffff;
     color: #000000;
@@ -40,7 +35,6 @@ nav {
     position: relative;
     margin-top: 20px;
 }
-
 
 nav ul {
     list-style: none;
@@ -117,14 +111,6 @@ nav ul li a:active {
     transform: rotate(-45deg) translate(6px, -6px);
 }
 
-.menu-icon {
-    display: none;
-}
-
-nav ul {
-    display: flex;
-}
-
 @media (max-width: 1220px) {
     .menu-icon {
         display: block;
@@ -160,7 +146,6 @@ nav ul {
         padding: 15px;
     }
 }
-
 
 #darkmode-toggle {
     display: none;
@@ -241,7 +226,7 @@ nav ul {
 }
 
 body.light-theme .discord-container {
-    background-color: #f1f1f1;
+    background-color: #e3e5e8;
     color: #000000;
 }
 
