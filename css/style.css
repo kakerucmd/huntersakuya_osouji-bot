@@ -49,12 +49,14 @@ nav ul li {
     margin: 0 10px;
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: #5865F2;
+.menu li a {
+    display: block;
     padding: 10px 15px;
-    border: 2px solid #5865F2;
+    color: #5865F2;
+    border: 1px solid #5865F2;
     border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
 }
 
 nav ul li a:hover {
@@ -78,13 +80,12 @@ nav ul li a:active {
 .menu-icon span,
 .menu-icon span::before,
 .menu-icon span::after {
-    content: '';
-    display: block;
-    height: 3px;
-    width: 25px;
-    background-color: #5865F2;
-    border-radius: 3px;
-    transition: 0.3s;
+    position: absolute;
+    top: 0;
+}
+
+.menu-icon span {
+    transform: translateY(0);
 }
 
 .menu-icon span::before {
@@ -109,42 +110,6 @@ nav ul li a:active {
 
 #menu-toggle:checked + .menu-icon span::after {
     transform: rotate(-45deg) translate(6px, -6px);
-}
-
-@media (max-width: 1220px) {
-    .menu-icon {
-        display: block;
-    }
-
-    nav ul {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-    }
-
-    #menu-toggle:checked ~ .menu {
-        display: flex;
-    }
-
-    nav ul li {
-        margin: 5px 0;
-    }
-
-    nav ul li a {
-        padding: 10px;
-        display: block;
-        width: 100%;
-    }
-}
-
-@media (max-width: 768px) {
-    .discord-container {
-        width: 100%;
-        max-width: none;
-        margin: 0;
-        padding: 15px;
-    }
 }
 
 #darkmode-toggle {
@@ -211,18 +176,15 @@ nav ul li a:active {
 .discord-container {
     width: 100%;
     max-width: 1000px;
-    margin: 0 auto;
-    background-color: #2f3136;
-    border-radius: 5px;
+    margin: 20px auto 0;
+    background-color: #1d1d1e;
+    border-radius: 16px;
     padding: 20px;
     box-sizing: border-box;
-    background: rgba(0, 0, 0, 0.05);
-    border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(4.5px);
     -webkit-backdrop-filter: blur(4.5px);
     border: 1px solid rgba(0, 0, 0, 0.24);
-    margin-top: 20px;
 }
 
 body.light-theme .discord-container {
@@ -243,9 +205,6 @@ body.light-theme .discord-container {
 }
 
 .discord-message.no-avatar {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 10px;
     padding-left: 60px;
 }
 
@@ -321,14 +280,133 @@ html {
     zoom: 1;
 }
 
+@media (max-width: 1220px) {
+  html {
+    zoom: 1;
+  }
+
+  .menu-icon {
+    display: block;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .menu-icon span,
+  .menu-icon span::before,
+  .menu-icon span::after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    background-color: #5865F2;
+    border-radius: 3px;
+    transition: 0.3s;
+    position: relative;
+  }
+
+  .menu-icon span::before,
+  .menu-icon span::after {
+    position: absolute;
+    top: 0;
+  }
+
+  .menu-icon span::before {
+    transform: translateY(-8px);
+  }
+
+  .menu-icon span::after {
+    transform: translateY(8px);
+  }
+
+  #menu-toggle:checked + .menu-icon span {
+    background-color: transparent;
+  }
+
+  #menu-toggle:checked + .menu-icon span::before {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  #menu-toggle:checked + .menu-icon span::after {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  #menu-toggle:checked ~ .menu {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    bottom: 0;
+    background-color: rgba(47, 49, 54, 0.75);
+    backdrop-filter: blur(8px);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 80px 20px 20px 20px;
+    z-index: 1000;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    opacity: 0;
+    transform: translateX(-100%);
+    pointer-events: none;
+    display: flex;
+    overflow-y: auto;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .menu li {
+    max-width: 100%;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 20px;
+    margin: 10px 0;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  #menu-toggle:checked ~ .menu li {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .menu li a {
+    display: block;
+    padding: 10px 15px;
+    color: #dcddde;
+    border: 1px solid #5865F2;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+
+  .menu li a:hover {
+    background-color: #5865F2;
+    color: #ffffff;
+  }
+}
+
 @media (max-width: 768px) {
-    html {
-        zoom: 0.8;
-    }
+  html {
+    zoom: 0.8;
+  }
 }
 
 @media (max-width: 480px) {
-    html {
-        zoom: 0.7;
-    }
+  html {
+    zoom: 0.7;
+  }
 }
