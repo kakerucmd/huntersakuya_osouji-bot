@@ -1,6 +1,6 @@
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #36393f;
+    background-color: #1a1a1e;
     color: #dcddde;
     padding: 20px;
 }
@@ -259,7 +259,7 @@ body.light-theme .discord-container {
 .discord-content {
     border-radius: 10px;
     border: 1px solid #4f545c;
-    background-color: #36393f;
+    background-color: #242428;
     padding: 10px;
     color: #dcddde;
     flex-grow: 1;
@@ -315,4 +315,20 @@ html, body {
     padding: 0;
     width: 100%;
     height: 100%;
+}
+
+html {
+    zoom: 1;
+}
+
+@media (max-width: 768px) {
+    html {
+        zoom: 0.8;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        zoom: 0.7;
+    }
 }
