@@ -6,7 +6,7 @@ body {
 }
 
 body.light-theme {
-    background-color: #ffffff;
+    background-color: #fbfbfb;
     color: #000000;
 }
 
@@ -226,7 +226,7 @@ nav ul li a:active {
 }
 
 body.light-theme .discord-container {
-    background-color: #e3e5e8;
+    background-color: #f3f3f4;
     color: #000000;
 }
 
@@ -259,7 +259,7 @@ body.light-theme .discord-container {
 .discord-content {
     border-radius: 10px;
     border: 1px solid #4f545c;
-    background-color: #242428;
+    background-color: #1a1a1e;
     padding: 10px;
     color: #dcddde;
     flex-grow: 1;
@@ -267,12 +267,12 @@ body.light-theme .discord-container {
 }
 
 body.light-theme .discord-content {
-    background-color: #ffffff;
+    background-color: #fbfbfb;
     color: #000000;
 }
 
 body.light-theme .discord-message:hover .discord-content {
-    background-color: #e0e0e0;
+    background-color: #eeeeef;
 }
 
 .discord-username {
@@ -284,7 +284,7 @@ body.light-theme .discord-message:hover .discord-content {
 }
 
 .discord-message:hover .discord-content {
-    background-color: #2e3035;
+    background-color: #242428;
 }
 
 .timestamp {
